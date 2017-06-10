@@ -1,7 +1,6 @@
 
 const app = require('./app');
 const request = require('supertest').agent(app.listen());
-
 describe('404', function() {
   describe('when GET /', function() {
     it('should return the 404 page', function(done) {
