@@ -13,6 +13,7 @@ koa 提供的代码案例中用到async,await 等，需要node.js version >= 7.0
 ES6 参考资料[阮一峰ES6入门](http://es6.ruanyifeng.com/) <br>
 KOA 官网 [中文官网](http://koa.bootcss.com/) (这个网站有很多语法错误) <br>
 KOA 官网 [英文官网](http://koajs.com/)<br>
+CnBlogs [cnblogs](http://www.cnblogs.com/myzy/p/6510113.html) <br>
 
 ## 测试框架mocha参考资料
 [阮一峰mocha案例](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)
