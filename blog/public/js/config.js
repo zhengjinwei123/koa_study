@@ -1,11 +1,12 @@
 requirejs.config({
-    baseUrl: './',
+    baseUrl: '/js',
     
     map: {
         '*': {
         }
     },
     paths: {
+        app:                'app',
         model:              'model',
         view:               'view',
         template:           '../template',
