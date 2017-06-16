@@ -22,6 +22,8 @@ let BackendRouter = new Router({
 let FrontendRouter = new Router();
 
 App.use(function *(next){
+    console.log("1111");
+    console.log(this.request);
     yield next;
 });
 
