@@ -3,7 +3,7 @@
 module.exports = function () {
     return function *(next) {
         if(!this.session || !this.session.user){
-            return this.send(null,100,"invalid session");
+            return this.send("未登录!");
         }
         yield next;
     };

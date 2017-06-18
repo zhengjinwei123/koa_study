@@ -15,15 +15,15 @@ let ResponseMiddle = require("./middlewares/response");
 
 let App = new Koa();
 
+App.env = 'production';
+
 let BackendRouter = new Router({
-   prefix:'/api'
+   prefix:''
 });
 
 let FrontendRouter = new Router();
 
 App.use(function *(next){
-    console.log("1111");
-    console.log(this.request);
     yield next;
 });
 
