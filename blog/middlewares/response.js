@@ -4,18 +4,11 @@ let Util = require("util");
 
 module.exports = function (){
     return function *(next){
-        this.send = function(res,code,msg){
+        this.send = function(err,data){
             let result = {
-                retCode:code
+                error:err,
+                data:data
             };
-            if (res) {
-                result = Util._extend(result, { data: res });
-            }
-            if (code !== 0 && msg) {
-                result = Util._extend(result, {
-                    retMsg: msg
-                });
-            }
             this.body = JSON.stringify(result);
         };
         yield next;

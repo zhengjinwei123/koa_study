@@ -1,0 +1,58 @@
+<% include header.ejs %>
+</head>
+<body>
+    <div id="dialog-register" class="dialog-1">
+        <div class="dialog-side-box">
+            <div class="dialog-header">
+                <span><i class="fa fa-registered" aria-hidden="true">用户注册</i></span>
+                <a id="close-win-register" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+            </div>
+            <div class="dialog-content">
+                <form id="form-register" onsubmit="return false;">
+                     <div>
+                         <label for="username">*用户名</label>
+                         <input id="username" name="username" type="text" class="input-lg" required placeholder="请输入用户名" />
+                     </div>
+                    <div>
+                        <label for="password">*密&nbsp;&nbsp;&nbsp;码</label>
+                        <input id="password" name="password" type="password" class="input-lg" required/>
+                    </div>
+                    <div class="form-group-submit">
+                        <button id="btn-submit-register" class="btn-normal-blue btn-lg" type="submit">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="dialog-login" class="dialog-1">
+        <div class="dialog-side-box">
+            <div class="dialog-header">
+                <span><i class="fa fa-user-circle" aria-hidden="true">用户登录</i></span>
+                <a id="close-win-login" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+            </div>
+            <div class="dialog-content">
+                <form id="form-login" onsubmit="return false;">
+                    <div>
+                        <label for="username">*用户名</label>
+                        <input id="username" name="username" type="text" class="input-lg" required placeholder="请输入用户名" />
+                    </div>
+                    <div>
+                        <label for="password">*密&nbsp;&nbsp;&nbsp;码</label>
+                        <input id="password" name="password" type="password" class="input-lg" required/>
+                    </div>
+                    <div class="form-group-submit">
+                        <button id="btn-submit-login" class="btn-normal-blue btn-lg" type="submit">提交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/require.js"></script>
+<script type="text/javascript">
+    require(["/js/config.js"],function(){
+        require(["/js/app/backend/register.js"]);
+    });
+</script>
+</html>
