@@ -5,7 +5,7 @@ define(function(require,exports,module){
     require("showLoading");
     let common = require("common");
 
-    $("#dialog-register").fadeIn(1000);
+    $("#dialog-register").fadeIn(100);
 
     // 用户注册响应
     $("#btn-submit-register").on("click",function(){
@@ -30,30 +30,37 @@ define(function(require,exports,module){
 
         $form.showLoading();
         $.post("/admin/register",_data,function(data){
-            if(data.error){
-                $.jGrowl(data.error, { life: 2000,position:'bottom-left'});
-            }else{
-                $.jGrowl("注册成功", { life: 2000,position:'bottom-left'});
-                $("#dialog-register").fadeOut(1000);
-                $("#dialog-login").fadeIn(1000);
+            $form.hideLoading();
+            let error = null;
+            try{
+                data = JSON.parse(data);
+            }catch(e){
+                error= e.message;
+            }finally {
+                if(error){
+                    $.jGrowl(error, { life: 2000,position:'bottom-left'});
+                }else{
+                    if(data.error){
+                        $.jGrowl(data.error, { life: 2000,position:'bottom-left'});
+                    }else{
+                        $.jGrowl("注册成功", { life: 2000,position:'bottom-left'});
+                        $("#dialog-register").fadeOut(100);
+                        $("#dialog-login").fadeIn(100);
+                    }
+                }
             }
-        },'json').complete(function(){
-            $form.hideLoading();
-        }).error(function(){
-            $.jGrowl("失败,请换个用户名试试", { life: 2000,position:'bottom-left'});
-            $form.hideLoading();
         });
     });
 
 
     $("#close-win-register").on("click",function(){
-        $("#dialog-register").fadeOut(1000);
-        $("#dialog-login").fadeIn(1000);
+        $("#dialog-register").fadeOut(100);
+        $("#dialog-login").fadeIn(100);
     });
 
     $("#close-win-login").on("click",function(){
-        $("#dialog-login").fadeOut(1000);
-        $("#dialog-register").fadeIn(1000);
+        $("#dialog-login").fadeOut(100);
+        $("#dialog-register").fadeIn(100);
     });
 
     // 用户登录响应
@@ -78,18 +85,23 @@ define(function(require,exports,module){
             return false;
         }
 
-        $form.showLoading();
         $.post("/admin/login",_data,function(data){
-            if(data.error){
-                $.jGrowl(data.error, { life: 2000,position:'bottom-left'});
-            }else{
-                $.jGrowl("登录成功", { life: 2000,position:'bottom-left'});
+            let error = null;
+            try{
+                data = JSON.parse(data);
+            }catch(e){
+                error = e.message;
+            }finally {
+                if(error){
+                    $.jGrowl(error, { life: 2000,position:'bottom-left'});
+                }else{
+                    if(data.error){
+                        $.jGrowl(data.error, { life: 2000,position:'bottom-left'});
+                    }else{
+                        window.location.href="/admin";
+                    }
+                }
             }
-        },'json').complete(function(){
-            $form.hideLoading();
-        }).error(function(){
-            $.jGrowl("服务器位置错误", { life: 2000,position:'bottom-left'});
-            $form.hideLoading();
         });
     });
 });

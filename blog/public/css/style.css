@@ -35,21 +35,12 @@ body{
 }
 
 #dialog-login{
+    position: absolute;
+    left:35%;
+    top:0;
     display: none;
 }
 
-
-.dialog-1{
-    margin:10% auto;
-    display: none;
-    width:400px;
-    height:400px;
-    background-color: #FFFFFF;
-    box-shadow: 2px 2px 2px #888888;
-    -webkit-box-shadow:2px 2px 2px #888888;
-    border-radius: 0.6em;
-    position: relative;
-}
 .dialog-1{
     margin:10% auto;
     display: none;
@@ -78,7 +69,9 @@ body{
 }
 .dialog-side-box > .dialog-header > span{
     text-align: center;
-    color:blue;
+    color: #ff44c2;
+    font-size:26px;
+    font-family: "华文宋体", Helvetica, Arial, sans-serif;
 }
 .dialog-side-box > .dialog-header > a{
     width:28px;
@@ -129,4 +122,22 @@ button:hover{
     line-height:26px;
 }
 
+@media screen and (min-width:1000px) {
+    .dialog-1{
+        margin:10% auto;
+        display: none;
+        width:300px;
+        height:300px;
+        background-color: #FFFFFF;
+        box-shadow: 2px 2px 2px #ffcd16;
+        -webkit-box-shadow:2px 2px 2px #ffcd16;
+        border-radius: 0.4em;
+        position: relative;
+    }
+}
+
 /*-----------end---登录注册------------*/
+
+/*-----------------------首页部分 start--------------------------------*/
+
+/*-----------------------首页部分 end--------------------------------*/

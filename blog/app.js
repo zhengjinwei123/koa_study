@@ -15,7 +15,7 @@ let ResponseMiddle = require("./middlewares/response");
 
 let App = new Koa();
 
-App.env = 'production';
+App.keys = ['koa', 'blog'];
 
 let BackendRouter = new Router({
    prefix:''
@@ -23,8 +23,9 @@ let BackendRouter = new Router({
 
 let FrontendRouter = new Router();
 
-App.use(function *(next){
-    yield next;
+App.use(async (ctx,next) =>{
+    console.log(ctx.request.url);
+    await next();
 });
 
 let db = require("./db/db");
@@ -45,10 +46,16 @@ App.use(StaticServer(Path.join(__dirname,"/public")))
     .use(FrontendRouter.routes())
     .use(FrontendRouter.allowedMethods());
 
+
 BackendRoutes(BackendRouter);
 FrontendRoutes(FrontendRouter);
 
 let Settings = require("./settings");
+
+App.on('error',(err,ctx)=>{
+    console.error(err,ctx);
+});
 App.listen(Settings.port);
+
 
 
