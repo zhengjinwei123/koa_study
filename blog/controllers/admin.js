@@ -6,7 +6,10 @@ let Common = require("../lib/common");
 
 // 首页
 exports.index = function *() {
-
+    console.log("hahha");
+    yield this.render('admin/index', {
+        title: "管理后台首页"
+    });
 };
 
 exports.showRegister = function *() {
@@ -36,16 +39,16 @@ exports.login = function *() {
 
     if (!result) {
         this.send("用户名不存在");
+        return;
     } else {
         if (Common.md5(password) === result.password) {
             //登录成功
             this.session.user = email;
-            this.session._id = result._id;
-            this.session.login_time = Date.now();
-
-            this.send(null);
+            this.send();
+            return;
         } else {
             this.send("密码错误");
+            return;
         }
     }
 };

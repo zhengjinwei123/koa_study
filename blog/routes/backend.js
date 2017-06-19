@@ -3,8 +3,7 @@ let AdminControl = require("../controllers/admin");
 let Auth  =require("../middlewares/auth");
 
 module.exports = function(router){
-    router.get('/admin/',AdminControl.index);
-    router.get('/admin/index',AdminControl.index);
+    router.get('/admin',Auth(),AdminControl.index);
     router.get('/admin/register',AdminControl.showRegister);
 
     router.post('/admin/register',AdminControl.create);
