@@ -56,6 +56,7 @@ let Settings = require("./settings");
 App.on('error',(err,ctx)=>{
     console.error(err,ctx);
 });
+console.log("already listen on port:"+Settings.port);
 App.listen(Settings.port);
 
 

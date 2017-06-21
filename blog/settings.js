@@ -6,5 +6,5 @@ module.exports = {
         password:"root",
         database:"koa_blogdb"
     },
-    port:4000
+    port:9100
 };
