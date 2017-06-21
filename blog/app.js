@@ -8,6 +8,7 @@ let Render = require("koa-views");
 let StaticServer = require("koa-static");
 let Session = require("koa-generic-session");
 let SessionStore = require("koa-session-mongoose");
+const Convert = require('koa-convert');
 
 let BackendRoutes = require("./routes/backend");
 let FrontendRoutes = require("./routes/frontend");
@@ -29,22 +30,22 @@ App.use(async (ctx,next) =>{
 });
 
 let db = require("./db/db");
-App.use(Session({
+App.use(Convert(Session({
     store:SessionStore.create(),
     collection:'KoaSessions',
     connection:db,
     expires:3600*24*1000,
     model:"KoaSession"
-}));
+})));
 
-App.use(StaticServer(Path.join(__dirname,"/public")))
-    .use(Render(Path.join(__dirname,"./views"),{default:'ejs'}))
-    .use(ResponseMiddle())
-    .use(BodyParser())
-    .use(BackendRouter.routes())
-    .use(BackendRouter.allowedMethods())
-    .use(FrontendRouter.routes())
-    .use(FrontendRouter.allowedMethods());
+App.use(Convert(StaticServer(Path.join(__dirname,"/public"))))
+    .use(Convert(Render(Path.join(__dirname,"./views"),{default:'ejs'})))
+    .use(Convert(ResponseMiddle()))
+    .use(Convert(BodyParser()))
+    .use(Convert(BackendRouter.routes()))
+    .use(Convert(BackendRouter.allowedMethods()))
+    .use(Convert(FrontendRouter.routes()))
+    .use(Convert(FrontendRouter.allowedMethods()));
 
 
 BackendRoutes(BackendRouter);
