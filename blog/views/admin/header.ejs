@@ -16,7 +16,7 @@
                 <li> <a href="/admin"><i class="fa fa-linux" aria-hidden="true">博客后台管理系统</i></a></li>
                 <li> <a href="/"><i class="fa fa-home" aria-hidden="true">主页</i></a></li>
                 <% if(user){%>
-                    <li> <a href="/admin/logout"><i class="fa fa-user-circle" aria-hidden="true">下线</i></a></li>
+                    <li> <%= user%><a style="margin-left:10px;" href="/admin/logout"><i class="fa fa-user-circle" aria-hidden="true">下线</i></a></li>
                 <%}else{%>
                      <li> <a href="/admin/register"><i class="fa fa-user-circle" aria-hidden="true">登录</i></a></li>
                 <%}%>
