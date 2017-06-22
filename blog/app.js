@@ -34,7 +34,7 @@ App.use(Convert(Session({
     store:SessionStore.create(),
     collection:'KoaSessions',
     connection:db,
-    expires:3600*24*1000,
+    expires:60 * 60 * 1000,// 1h
     model:"KoaSession"
 })));
 

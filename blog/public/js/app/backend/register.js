@@ -5,7 +5,7 @@ define(function(require,exports,module){
     require("showLoading");
     let common = require("common");
 
-    $("#dialog-register").fadeIn(1000);
+    $("#dialog-login").fadeIn(1000);
 
     // 用户注册响应
     $("#btn-submit-register").on("click",function(){

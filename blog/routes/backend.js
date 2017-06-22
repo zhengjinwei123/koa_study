@@ -5,6 +5,7 @@ let Auth  =require("../middlewares/auth");
 module.exports = function(router){
     router.get('/admin',Auth(),AdminControl.index);
     router.get('/admin/register',AdminControl.showRegister);
+    router.get('/admin/logout',AdminControl.logout);
 
     router.post('/admin/register',AdminControl.create);
     router.post('/admin/login',AdminControl.login);

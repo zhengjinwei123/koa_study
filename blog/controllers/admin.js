@@ -13,10 +13,14 @@ exports.index = function *() {
 };
 
 exports.showRegister = function *() {
-    yield this.render('admin/register', {
-        title: "用户注册",
-        user: this.session.user
-    });
+    if(this.session && this.session.user){
+        return this.redirect("index");
+    }else{
+        yield this.render('admin/register', {
+            title: "用户注册",
+            user: this.session.user
+        });
+    }
 };
 
 // 用户注册
@@ -56,6 +60,14 @@ exports.login = function *() {
             return;
         }
     }
+};
+
+// 下线
+exports.logout = function *(){
+    if(this.session && this.session.user){
+        this.session.user = null;
+    }
+    this.redirect("index");
 };
 
 // 列表
