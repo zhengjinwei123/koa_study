@@ -7,13 +7,19 @@
     <link rel="stylesheet" href="/js/font-awesome-4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/showLoading.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <link href="/images/favicon.ico" rel="shortcut icon">
 </head>
 <body>
     <header id="page-header">
         <div>
             <ul>
-                <li> <i class="fa fa-linux" aria-hidden="true">博客后台管理系统</i></li>
+                <li> <a href="/admin"><i class="fa fa-linux" aria-hidden="true">博客后台管理系统</i></a></li>
                 <li> <a href="/"><i class="fa fa-home" aria-hidden="true">主页</i></a></li>
+                <% if(user){%>
+                     <li> <i class="fa fa-user-circle" aria-hidden="true"><%= user%></i></li>
+                <%}else{%>
+                     <li> <a href="/admin/register"><i class="fa fa-user-circle" aria-hidden="true">登录</i></a></li>
+                <%}%>
             </ul>
         </div>
     </header>

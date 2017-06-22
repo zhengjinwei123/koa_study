@@ -7,13 +7,15 @@ let Common = require("../lib/common");
 // 首页
 exports.index = function *() {
     yield this.render('admin/index', {
-        title: "管理后台首页"
+        title: "管理后台首页",
+        user: this.session.user
     });
 };
 
 exports.showRegister = function *() {
     yield this.render('admin/register', {
-        title: "用户注册"
+        title: "用户注册",
+        user: this.session.user
     });
 };
 

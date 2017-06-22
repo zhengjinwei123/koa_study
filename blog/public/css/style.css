@@ -148,37 +148,60 @@ button:hover{
     /*border-top:none;*/
     /*border-bottom-left-radius: 0.5rem;*/
     /*border-bottom-right-radius: 0.6rem;*/
-    position:absolute;
+    position:fixed;
+    z-index:1000;
     top:0;
     left:0;
     font-size:22px;
     line-height:40px;
     box-shadow: 0 1px 1px #fefefe;
-    color:#fefefe;
+    color: #fed87e;
     font-family: "微软雅黑";
 }
 #page-header > div{
     padding-left:10px;
+    width:100%;
 }
-#page-header > div >ul{
+#page-header > div > ul{
+    width:100%;
     display: inline-block;
 }
-#page-header > div >ul >li{
+#page-header > div > ul > li{
     float: left;
     margin-left:20px;
     list-style-type: none;
 }
-#page-header > div > ul >li:nth-of-type(2) > a{
-    color:#ff0000;
+
+#page-header > div > ul > li:nth-of-type(3){
+    float: right;
+    font-size:16px;
+    margin-right:40px;
 }
-#page-header > div > ul >li:nth-of-type(2) > a:hover{
-    color: #ff1284;
+#page-header > div > ul > li:nth-of-type(3):hover{
+    color:#fed87e;
+}
+
+
+#page-header > div > ul >li > a{
+    color:#fed87e;
+}
+#page-header > div > ul >li> a:hover{
+    color: #ffff1b;
     font-size:23px;
     text-decoration: underline;
 }
 
+
 /*-----------end---登录注册------------*/
 
 /*-----------------------首页部分 start--------------------------------*/
-
+body > #admin-box{
+    position:absolute;
+    background-color: #fefefe;
+    margin-top:42px;
+    width:100%;
+    height:calc(100% - 42px);
+    color:red;
+    font-size:1.4rem;
+}
 /*-----------------------首页部分 end--------------------------------*/
