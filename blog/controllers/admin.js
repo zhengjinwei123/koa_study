@@ -6,7 +6,6 @@ let Common = require("../lib/common");
 
 // 首页
 exports.index = function *() {
-    console.log("hahha");
     yield this.render('admin/index', {
         title: "管理后台首页"
     });
