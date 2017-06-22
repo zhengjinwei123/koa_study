@@ -23,12 +23,16 @@ exports.showRegister = function *() {
 exports.create = function *() {
     let param = this.request.body;
     let email = param['username'], password = param['password'];
-    let result = yield thunkify(UserModel.add, UserModel)(email, Common.md5(password));
 
-    if (!result) {
-        this.send("create user failed");
-    } else {
-        this.send(null);
+    try{
+        let result = yield thunkify(UserModel.add, UserModel)(email, Common.md5(password));
+        if (!result) {
+            this.send("create user failed");
+        } else {
+            this.send(null);
+        }
+    }catch(e){
+        this.send(e.message);
     }
 };
 

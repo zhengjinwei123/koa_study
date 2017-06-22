@@ -3,11 +3,12 @@
 module.exports = function () {
     return function *(next) {
         if(!this.session || !this.session.user){
-            yield this.render('admin/index', {
-                title: "管理后台首页",
+            yield this.render('admin/register', {
+                title: "注册",
                 user: this.session.user
             });
+        }else{
+            yield next;
         }
-        yield next;
     };
 };
