@@ -223,13 +223,14 @@ body > #admin-box > #work-view > .markdown-view{
     float: left;
     border-right:1px solid #f9fec0;
 }
-body > #admin-box > #work-view > .markdown-view > div{
+body > #admin-box > #work-view > .markdown-view > textarea{
     margin-left:20px;
     padding-left:2px;
     padding-top:5px;
     width:calc(100% - 30px);
     height:calc(100% - 12px);
     border:1px solid red;
+    font-size:18px;
 }
 
 body > #admin-box > #work-view > .code-view{
@@ -244,6 +245,9 @@ body > #admin-box > #work-view > .code-view > div{
     width:calc(100% - 6px);
     height:calc(100% - 6px);
     border:1px solid #5049ff;
+    background-color: #fbf7f9;
+    overflow: auto;
+    color:#000000;
 }
 
 /*-----------------------首页部分 end--------------------------------*/

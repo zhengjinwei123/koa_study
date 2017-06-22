@@ -20,11 +20,14 @@ requirejs.config({
         jform:              [ 'jquery.form' ],
         datePicker:         [ 'My97DatePicker/WdatePicker' ],
         highcharts:         [ 'highcharts' ],
-        bootstrapSelect:    [ 'bootstrap-select/js/bootstrap-select.min' ]
+        bootstrapSelect:    [ 'bootstrap-select/js/bootstrap-select.min' ],
+        highLight:          [ 'highlight/highlight.pack'],
+        marked:             [ 'marked/marked.min']
     },
     shim: {
         'jquery':           {exports:'$'},
         'underscore':       {exports: '_'},
+        'highLight':        {exports: 'hljs'},
         'bootstrap':        {deps: ['jquery']},
         'jgrowl':           {deps: ['jquery']},
         'showLoading':      {deps: ['jquery']},
@@ -37,7 +40,7 @@ requirejs.config({
     }
 });
 
-require(["jquery"],function($){
+require(["jquery","highLight","marked"],function($,hljs,marked){
     $.fn.serializeObject = function() {
         var o = {};
         var a = this.serializeArray();
@@ -53,4 +56,6 @@ require(["jquery"],function($){
         });
         return o;
     };
+
+    hljs.initHighlightingOnLoad();
 });

@@ -6,16 +6,24 @@
     </div>
     <di id="work-view">
         <div class="markdown-view">
-            <div contenteditable="true">
+            <textarea rows="10" cols="20">
 
-            </div>
+            </textarea>
         </div>
         <div class="code-view">
-            <div contenteditable="false">
-
+            <div id="code">
+                <pre><code class="javascript">console.log(123)</code>
+                </pre>
             </div>
         </div>
     </di>
 </div>
 </body>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="/js/require.js"></script>
+<script type="text/javascript">
+    require(["/js/config.js"], function () {
+        require(["/js/app/backend/blog.js"]);
+    });
+</script>
 </html>
