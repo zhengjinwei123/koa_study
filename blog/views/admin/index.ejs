@@ -1,25 +1,39 @@
 <% include header.ejs %>
 
 <div id="admin-box">
-    <div id="menu-bar">
 
+    <div id="menu-bar">
+        <ul>
+            <li>
+                <select class="selectpicker" id="article-type">
+                    <option value ="0">请选择文章类型</option>
+                </select>
+            </li>
+            <li>
+                <button id="add-article-type" class="btn btn-default btn-sm">新增</button>
+            </li>
+            <li>
+                <input type="text" class="form-control" id="article-title" placeholder="文章标题">
+            </li>
+            <li>
+                <button class="btn btn-success btn-sm">提交</button>
+            </li>
+        </ul>
     </div>
     <di id="work-view">
         <div class="markdown-view">
-            <textarea rows="10" cols="20">
-
-            </textarea>
+            <textarea rows="10" cols="20"></textarea>
         </div>
         <div class="code-view">
             <div id="code">
-                <pre><code class="javascript">console.log(123)</code>
-                </pre>
+                <!--<pre><code class="javascript">console.log(123)</code>-->
+                <!--</pre>-->
             </div>
         </div>
     </di>
 </div>
 </body>
-<script>hljs.initHighlightingOnLoad();</script>
+<!--<script>hljs.initHighlightingOnLoad();</script>-->
 <script src="/js/require.js"></script>
 <script type="text/javascript">
     require(["/js/config.js"], function () {

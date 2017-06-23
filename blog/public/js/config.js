@@ -40,7 +40,7 @@ requirejs.config({
     }
 });
 
-require(["jquery","highLight","marked"],function($,hljs,marked){
+require(["jquery","highLight","marked","bootstrapSelect"],function($,hljs,marked,bootstrapSelect){
     $.fn.serializeObject = function() {
         var o = {};
         var a = this.serializeArray();
@@ -58,4 +58,12 @@ require(["jquery","highLight","marked"],function($,hljs,marked){
     };
 
     hljs.initHighlightingOnLoad();
+
+    $('.selectpicker').selectpicker({
+        style: 'btn btn-default btn-sm',
+        size: 4,
+        iconBase: ".glyphicon .glyphicon-heart",
+        liveSearch: true,
+        actionsBox: true
+    });
 });

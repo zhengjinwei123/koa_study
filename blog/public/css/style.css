@@ -7,7 +7,78 @@
     margin:0;
     padding:0;
     font-family: '微软雅黑';
+    border:none;
 }
+
+/*******************清除样式********************/
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea { /* for ie */
+    /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+    font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+
+h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+h2 { font-size: 16px; }
+h3 { font-size: 14px; }
+h4, h5, h6 { font-size: 100%; }
+
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+a,button,input{
+    outline: 0;
+}
+a:focus,button:focus,input:focus{
+    outline: 0;
+}
+/**************************************/
 
 /*-----------通用-----end-----------------------*/
 
@@ -143,7 +214,7 @@ button:hover{
 
 #page-header{
     width:100%;
-    height:40px;
+    height:22px;
     background-color: rgba(62,61,50,0.9);
     /*border-top:none;*/
     /*border-bottom-left-radius: 0.5rem;*/
@@ -152,10 +223,10 @@ button:hover{
     z-index:1000;
     top:0;
     left:0;
-    font-size:22px;
-    line-height:40px;
+    font-size:16px;
+    line-height:16px;
     box-shadow: 0 1px 1px #fefefe;
-    color: #fed87e;
+    color: rgba(240, 228, 227, 0.71);
     font-family: "微软雅黑";
 }
 #page-header > div{
@@ -179,16 +250,16 @@ button:hover{
     margin-right:40px;
 }
 #page-header > div > ul > li:nth-of-type(3):hover{
-    color:#fed87e;
+    color: #fe081a;
 }
 
 
 #page-header > div > ul >li > a{
-    color:#fed87e;
+    color: #e0fcfe;
 }
 #page-header > div > ul >li> a:hover{
     color: #ffff1b;
-    font-size:23px;
+    font-size:15px;
     text-decoration: underline;
 }
 
@@ -199,16 +270,16 @@ button:hover{
 body > #admin-box{
     position:absolute;
     background-color: rgba(229,229,229,1);
-    margin-top:42px;
+    margin-top:20px;
     width:100%;
-    height:calc(100% - 42px);
+    height:calc(100% - 20px);
     color:red;
-    font-size:1.4rem;
+    font-size:1.2rem;
 }
 body > #admin-box > #menu-bar{
     width:100%;
-    height:120px;
-    background-color: rgba(29,156,114,0.9);
+    height:40px;
+    background-color: rgba(229,229,229, 0.99);
     border-bottom: 2px solid rgba(33, 8, 43, 0.88);
 }
 body > #admin-box > #work-view{
@@ -218,10 +289,10 @@ body > #admin-box > #work-view{
 }
 body > #admin-box > #work-view > .markdown-view{
     width:calc(50% - 2px);
-    height:calc(100% - 135px);
+    height:calc(100% - 55px);
     /*background-color: rgba(255,254,175,0.88);*/
     float: left;
-    border-right:1px solid #f9fec0;
+    border-right:1px solid #2529fe;
 }
 body > #admin-box > #work-view > .markdown-view > textarea{
     margin-left:20px;
@@ -229,25 +300,56 @@ body > #admin-box > #work-view > .markdown-view > textarea{
     padding-top:5px;
     width:calc(100% - 30px);
     height:calc(100% - 12px);
-    border:1px solid red;
-    font-size:18px;
+    /*border:1px solid red;*/
+    font-size:0.8rem;
+    background-color: #272822;
+    color: #fefefe;
 }
 
 body > #admin-box > #work-view > .code-view{
     width:calc(50% - 2px);
-    height:calc(100% - 135px);
+    height:calc(100% - 55px);
     /*background-color: rgba(255, 150, 37, 0.88);*/
     float: right;
-    border-left:1px solid #f9fec0;
+    /*border-left:1px solid #0808fe;*/
 }
 
 body > #admin-box > #work-view > .code-view > div{
-    width:calc(100% - 6px);
+    width:calc(100% - 16px);
     height:calc(100% - 6px);
-    border:1px solid #5049ff;
-    background-color: #fbf7f9;
+    /*border:1px solid #5049ff;*/
+    background-color: #fefefe;
+    padding-left:5px;
+    padding-right:5px;
     overflow: auto;
     color:#000000;
+    font-size:0.8rem;
 }
 
+/****menu 部分 开始*/
+#menu-bar > ul{
+    display: inline-block;
+    list-style-type: none;
+    margin-left:10px;
+    width:100%;
+    height:90%;
+}
+#menu-bar > ul > li{
+    color:#fefefe;
+    float: left;
+    margin-top:0;
+    margin-left:2px;
+    height:40px;
+}
+#menu-bar > ul > li:nth-of-type(1){
+    margin-top:-5px;
+}
+#menu-bar > ul > li:nth-of-type(3){
+    margin-left:10%;
+}
+#menu-bar > ul > li:nth-of-type(4){
+    float: right;
+    margin-right:40px;
+}
+/****menu 部分 结束*/
 /*-----------------------首页部分 end--------------------------------*/
