@@ -24,3 +24,12 @@ github [github](https://github.com/hellopao/Blog)
 
 ## PS
 1. ES6 在前端框架React中也是基于ES6
+
+
+## 博客项目
+[koaBlog](https://github.com/zhengjinwei123/koa_study/tree/master/blog)
+
+##### 1.基于koa2,es6
+##### 2.mongodb存储
+##### 3.前端采用部分`bootstrap` 插件 + 纯`css3` + `html5` + `requirejs`
+##### 4.代码编辑 支持 `markdown` 语法 ,采用`highlight`渲染
