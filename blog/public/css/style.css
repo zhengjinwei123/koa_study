@@ -82,6 +82,9 @@ a:focus,button:focus,input:focus{
 
 /*-----------通用-----end-----------------------*/
 
+body{
+    background:url(../images/sea.png) repeat;
+}
 /*-----------------------登录与注册---start----------------*/
 div{
     margin-top:5px;
@@ -89,20 +92,35 @@ div{
 label{
     color:#408AED;
 }
-input[type='password']{
+input[type='password'],input[type='text']{
     display: inline-block;
     height:26px;
     line-height:26px;
     color:#272822;
-}
-input[type='text']{
-    display: inline-block;
-    height:26px;
-    line-height:26px;
-    color:#272822;
+    border:1px solid #272822;
+    border-radius: 3px;
+    padding-left:2px;
+    font-size:1rem;
 }
 body{
     background-color: #272822;
+}
+
+
+input[type='password']:focus,input[type='text']:focus{
+    border-color: rgba(247,114,150,0.98);
+}
+
+.dialog-1{
+    margin:10% auto;
+    display: none;
+    width:420px;
+    height:420px;
+    background-color: #bbd3ff;
+    box-shadow: 2px 2px 2px #888888;
+    -webkit-box-shadow:2px 2px 2px #d87547;
+    border-radius: 0.6em;
+    position: absolute;
 }
 
 #dialog-register{
@@ -110,19 +128,10 @@ body{
     left:42%;
     top:0;
     display: none;
-    background-color:rgba(247,247,247,0.98);
+    background-color: rgba(229, 247, 201, 0.98);
 }
-
-.dialog-1{
-    margin:10% auto;
-    display: none;
-    width:400px;
-    height:400px;
-    background-color: #FFFFFF;
-    box-shadow: 2px 2px 2px #888888;
-    -webkit-box-shadow:2px 2px 2px #888888;
-    border-radius: 0.6em;
-    position: relative;
+#dialog-login{
+    background-color: rgba(247, 223, 166, 0.98);
 }
 
 .float-left{
@@ -204,7 +213,7 @@ button:hover{
         display: none;
         width:300px;
         height:300px;
-        background-color: #FFFFFF;
+        background-color: #ffeebc;
         box-shadow: 2px 2px 2px #ffcd16;
         -webkit-box-shadow:2px 2px 2px #ffcd16;
         border-radius: 0.4em;
@@ -255,7 +264,7 @@ button:hover{
 
 
 #page-header > div > ul >li > a{
-    color: #e0fcfe;
+    color: #fe10c7;
 }
 #page-header > div > ul >li> a:hover{
     color: #ffff1b;
@@ -301,7 +310,7 @@ body > #admin-box > #work-view > .markdown-view > textarea{
     width:calc(100% - 30px);
     height:calc(100% - 12px);
     /*border:1px solid red;*/
-    font-size:0.8rem;
+    font-size:2rem;
     background-color: #272822;
     color: #fefefe;
 }
@@ -318,12 +327,12 @@ body > #admin-box > #work-view > .code-view > div{
     width:calc(100% - 16px);
     height:calc(100% - 6px);
     /*border:1px solid #5049ff;*/
-    background-color: #fefefe;
+    background-color: #272822;
     padding-left:5px;
     padding-right:5px;
     overflow: auto;
-    color:#000000;
-    font-size:0.8rem;
+    color: #fbf0f2;
+    font-size:1.6rem;
 }
 
 /****menu 部分 开始*/
@@ -331,7 +340,7 @@ body > #admin-box > #work-view > .code-view > div{
     display: inline-block;
     list-style-type: none;
     margin-left:10px;
-    width:100%;
+    width: calc(100% - 20px);
     height:90%;
 }
 #menu-bar > ul > li{
