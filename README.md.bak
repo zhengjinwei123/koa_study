@@ -33,7 +33,7 @@ github [github](https://github.com/hellopao/Blog)
 ##### 2.mongodb存储
 ##### 3.前端采用部分`bootstrap` 插件 + 纯`css3` + `html5` + `requirejs`
 ##### 4.代码编辑 支持 `markdown` 语法 ,采用`highlight`渲染
-##### 5.部署与运行(博客内容显示部分停止更新)
+##### 5.部署与运行(博客显示部分停止更新)
 
 ```
 1. 在本地启动mongodb服务,不要设置密码,监听端口27017
