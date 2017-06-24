@@ -2,8 +2,8 @@
 let Mongoose = require("mongoose");
 
 let UserSchema = new Mongoose.Schema({
-    email:{type:String,required: true, index: {unique: true}},
-    password:{type:String}
+    email:{type:String,required: true, index: {unique: true}},//用户名(邮箱格式)
+    password:{type:String}//用户密码,md5格式
 });
 
 UserSchema.statics.fineByEmail = function(email,cb){

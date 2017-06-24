@@ -6,7 +6,7 @@
         <ul>
             <li>
                 <select class="selectpicker" id="article-type">
-                    <option value ="0">请选择文章类型</option>
+                    <option value ="-1">请选择文章类型</option>
                 </select>
             </li>
             <li>
@@ -32,7 +32,27 @@
         </div>
     </di>
 </div>
+
 </body>
+<div id="dialog-add-type" class="dialog-2">
+    <div class="dialog-side-box">
+        <div class="dialog-header">
+            <span><i class="fa fa-user-circle" aria-hidden="true">添加文章类型</i></span>
+            <a title="关闭" id="close-win-add-type" href="#"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+        </div>
+        <div class="dialog-content">
+            <form id="form-add-type" onsubmit="return false;">
+                <div>
+                    <label for="articleType">*类型</label>
+                    <input id="articleType" name="articleType" type="text" class="input-lg" required placeholder="请输入类型"/>
+                </div>
+                <div class="form-group-submit">
+                    <button id="submit-add-type" class="btn btn-default btn-sm" type="submit">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!--<script>hljs.initHighlightingOnLoad();</script>-->
 <script src="/js/require.js"></script>
 <script type="text/javascript">
