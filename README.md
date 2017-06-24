@@ -38,7 +38,7 @@ github [github](https://github.com/hellopao/Blog)
 ```
 1. 在本地启动mongodb服务,不要设置密码,监听端口27017
 2. nodejs版本 >=7.0.0
-3. 在根目录下 运行 npm install
+3. 在根目录下 运行 npm install (请先删除目录下的package-lock.json文件)
 4. 运行node app.js
 5. 打开页面 http://127.0.0.1:9100/ 即可
 ```
