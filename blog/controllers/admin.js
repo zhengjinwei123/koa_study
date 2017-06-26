@@ -40,6 +40,7 @@ exports.create = function *() {
     }
 };
 
+
 // 登录
 exports.login = function *() {
     let param = this.request.body;
