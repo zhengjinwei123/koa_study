@@ -42,3 +42,6 @@ github [github](https://github.com/hellopao/Blog)
 4. 运行node app.js
 5. 打开页面 http://127.0.0.1:9100/ 即可
 ```
+##### 效果:
+<img src="https://github.com/zhengjinwei123/koa_study/tree/master/blog/s.png" width="600px" height="600px"/>
+
